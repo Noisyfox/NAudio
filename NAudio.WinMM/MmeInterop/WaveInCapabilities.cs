@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using Microsoft.Win32;
+// using Microsoft.Win32;
 
 namespace NAudio.Wave
 {
@@ -105,18 +105,18 @@ namespace NAudio.Wave
         /// <summary>
         /// The device name from the registry if supported
         /// </summary>
-        public static string GetNameFromGuid(Guid guid)
-        {
-            // n.b it seems many audio drivers just return the default values, which won't be in the registry
-            // http://www.tech-archive.net/Archive/Development/microsoft.public.win32.programmer.mmedia/2006-08/msg00102.html
-            string name = null;
-            using (var namesKey = Registry.LocalMachine.OpenSubKey(@"System\CurrentControlSet\Control\MediaCategories"))
-            using (var nameKey = namesKey.OpenSubKey(guid.ToString("B")))
-            {
-                if (nameKey != null) name = nameKey.GetValue("Name") as string;
-            }
-            return name;
-        }
+        // public static string GetNameFromGuid(Guid guid)
+        // {
+        //     // n.b it seems many audio drivers just return the default values, which won't be in the registry
+        //     // http://www.tech-archive.net/Archive/Development/microsoft.public.win32.programmer.mmedia/2006-08/msg00102.html
+        //     string name = null;
+        //     using (var namesKey = Registry.LocalMachine.OpenSubKey(@"System\CurrentControlSet\Control\MediaCategories"))
+        //     using (var nameKey = namesKey.OpenSubKey(guid.ToString("B")))
+        //     {
+        //         if (nameKey != null) name = nameKey.GetValue("Name") as string;
+        //     }
+        //     return name;
+        // }
 
     }
 }
