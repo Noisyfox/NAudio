@@ -14,6 +14,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>naudio-icon.png</PackageIcon>
+    <DebugType>full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
